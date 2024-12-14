@@ -3,7 +3,6 @@ C:\Users\Youssef\Desktop\Practicando\tasques c#\Qiyana Game\Game\obj\Debug\net9.
 C:\Users\Youssef\Desktop\Practicando\tasques c#\Qiyana Game\Game\obj\Debug\net9.0\Game.AssemblyInfoInputs.cache
 C:\Users\Youssef\Desktop\Practicando\tasques c#\Qiyana Game\Game\obj\Debug\net9.0\Game.AssemblyInfo.cs
 C:\Users\Youssef\Desktop\Practicando\tasques c#\Qiyana Game\Game\obj\Debug\net9.0\Game.csproj.CoreCompileInputs.cache
-C:\Users\Youssef\Desktop\Practicando\tasques c#\Qiyana Game\Game\obj\Debug\net9.0\Game.sourcelink.json
 C:\Users\Youssef\Desktop\Practicando\tasques c#\Qiyana Game\Game\bin\Debug\net9.0\Game.exe
 C:\Users\Youssef\Desktop\Practicando\tasques c#\Qiyana Game\Game\bin\Debug\net9.0\imatges\qiyana.png
 C:\Users\Youssef\Desktop\Practicando\tasques c#\Qiyana Game\Game\bin\Debug\net9.0\Game.deps.json
@@ -27,3 +26,5 @@ C:\Users\Youssef\Desktop\Practicando\tasques c#\Qiyana Game\Game\obj\Debug\net9.
 C:\Users\Youssef\Desktop\Practicando\tasques c#\Qiyana Game\Game\obj\Debug\net9.0\Game.pdb
 C:\Users\Youssef\Desktop\Practicando\tasques c#\Qiyana Game\Game\obj\Debug\net9.0\Game.genruntimeconfig.cache
 C:\Users\Youssef\Desktop\Practicando\tasques c#\Qiyana Game\Game\obj\Debug\net9.0\ref\Game.dll
+C:\Users\Youssef\Desktop\Practicando\tasques c#\Qiyana Game\Game\bin\Debug\net9.0\imatges\icon.png
+C:\Users\Youssef\Desktop\Practicando\tasques c#\Qiyana Game\Game\bin\Debug\net9.0\imatges\mapa.png
