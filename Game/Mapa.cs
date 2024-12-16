@@ -6,7 +6,7 @@ public class Mapa
     private readonly Image imatge;
     public Mapa()
     {
-        imatge = new Image(Files.OpenStream("imatges/mapa.png"));
+        imatge = new Image(Files.OpenStream("imatges/map.png"));
     }
     public void Pinta(GraphicsContext gfx, Rectangle finestra)
     {
