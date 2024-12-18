@@ -11,4 +11,10 @@ public class Mapa
     {
         gfx.DrawImage(image, windowRectangle);
     }
+    public void DrawMinions(in List<Minion> minions, GraphicsContext gfx){
+        foreach (var minion in minions)
+        {
+            minion.Draw(gfx);
+        }
+    }
 }

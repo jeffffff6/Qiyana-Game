@@ -9,14 +9,19 @@ public class Minion
     private Vector posicio;
     private Circle hitbox;
     
-    public Minion()
+    public Minion(int MAX_MAPA)
     {
         Random rnd = new Random();
-        int randomIndex = rnd.Next(1,5);
-
-        string randomMinionImage = "imatges/minions/" +randomIndex+ ".png";
-        image = new Image("imatges/minions/.png");
+        image = new Image("imatges/130px/" + rnd.Next(1,5) + ".png");
+        
+        int offSet = 130;
+        posicio.X = rnd.Next(0+offSet,MAX_MAPA-offSet);
+        posicio.Y = rnd.Next(0+offSet,MAX_MAPA-offSet);
     }
+    public void Draw(GraphicsContext gfx){
+        gfx.DrawImage(image, posicio);
+    }
+
 
 }
 }
