@@ -5,11 +5,12 @@ namespace Game;
 
 class Program
 {
-    public const int MAX_MAPA = 850;
+    public static readonly int MAX_MAPA = 850;
     public static Window window;
     public static Qiyana qiyana;
     public static Mapa mapa;
     public static Minion minion;
+    public static LlistaMinions minions;
     static void Main(string[] args)
     {
         Application.Run(()=>{
@@ -20,6 +21,7 @@ class Program
 
             mapa = new Mapa();   
 
+            minions = new LlistaMinions();
             
             var loop = GameLoop.Create(window.Graphics, OnUpdate);
             loop.Start();
@@ -30,6 +32,8 @@ class Program
         var windowRectangle = new Rectangle(0, 0, window.Width, window.Height);
         gfx.DrawImage(mapa.image, windowRectangle);
 
+
+        minions.AddMinion(MAX_MAPA);
         mapa.DrawMinions(in minions, gfx);
         qiyana.Draw(gfx);
         qiyana.Move(windowRectangle);
