@@ -1,23 +1,14 @@
 using Heirloom;
-using Heirloom.IO;
-namespace Moviment;
+namespace Game;
 public class Mapa
 {
-    private readonly Image imatge;
+    public Image image {get;}
     public Mapa()
     {
-        imatge = new Image(Files.OpenStream("imatges/map.png"));
+        image = new Image("imatges/map.png");
     }
-    public void Pinta(GraphicsContext gfx, Rectangle finestra)
+    public void Draw(GraphicsContext gfx, Rectangle windowRectangle)
     {
-        var yScale = finestra.Height / imatge.Height;
-        var xScale = finestra.Width / imatge.Width;
-        var scale = Calc.Min(xScale, yScale);
-
-        var xOffset = finestra.Min.X + (finestra.Width - (imatge.Width * scale)) / 2F;
-        var yOffset = finestra.Min.Y + (finestra.Height - (imatge.Height * scale)) / 2F;
-
-
-        gfx.DrawImage(imatge, Matrix.CreateTransform(xOffset, yOffset, 0, scale, scale));
+        gfx.DrawImage(image, windowRectangle);
     }
 }

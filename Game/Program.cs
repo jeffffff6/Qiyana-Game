@@ -1,37 +1,35 @@
 ﻿using Heirloom;
 using Heirloom.Desktop;
 
-namespace Moviment;
+namespace Game;
 
 class Program
 {
-    private static Window finestra;
-    private static Qiyana qiyana;
-    //private static Mapa mapa;
-    public const int MAX_MAPA = 900;
+    public static Window window;
+    public static Qiyana qiyana;
+    public static Mapa mapa;
+    public const int MAX_MAPA = 850;
     static void Main(string[] args)
     {
         Application.Run(()=>{
-            finestra = new Window("Qiyana Game", (MAX_MAPA,MAX_MAPA));
-            finestra.SetIcon(new Image("imatges/icon.png"));
-            finestra.IsResizable = false;
-            finestra.MoveToCenter();
-            qiyana = new Qiyana(10,10);
+            window = new Window("Qiyana Game", (MAX_MAPA,MAX_MAPA));
+            window.SetIcon(new Image("imatges/icon.png"));      window.IsResizable = false;     window.MoveToCenter();
 
-            //mapa = new Mapa();   
+            qiyana = new Qiyana(MAX_MAPA/2-(128/2),MAX_MAPA/2-(128/2));
+
+            mapa = new Mapa();   
 
          
-            var loop = GameLoop.Create(finestra.Graphics, OnUpdate);
+            var loop = GameLoop.Create(window.Graphics, OnUpdate);
             loop.Start();
 
         });
     }
     private static void OnUpdate(GraphicsContext gfx, float dt){
 
-        var rectangleFinestra = new Rectangle(0, 0, finestra.Width, finestra.Height);
-        Image fondo  = new Image("imatges/mapa2.png");
-        gfx.DrawImage(fondo, rectangleFinestra);
-        qiyana.Pinta(gfx);
-        qiyana.Mou(rectangleFinestra);
+        var windowRectangle = new Rectangle(0, 0, window.Width, window.Height);
+        gfx.DrawImage(mapa.image, windowRectangle);
+        qiyana.Draw(gfx);
+        qiyana.Move(windowRectangle);
     }
 }
