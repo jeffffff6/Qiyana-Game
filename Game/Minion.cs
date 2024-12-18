@@ -14,9 +14,9 @@ public class Minion
         Random rnd = new Random();
         image = new Image("imatges/130px/" + rnd.Next(1,5) + ".png");
         
-        int offSet = 130;
-        posicio.X = rnd.Next(0+offSet,MAX_MAPA-offSet);
-        posicio.Y = rnd.Next(0+offSet,MAX_MAPA-offSet);
+        int offSet = 145;
+        posicio.X = rnd.Next(0+22,MAX_MAPA-offSet);
+        posicio.Y = rnd.Next(0+22,MAX_MAPA-offSet);
     }
     public void Draw(GraphicsContext gfx){
         gfx.DrawImage(image, posicio);
