@@ -22,6 +22,7 @@ class Program
             mapa = new Mapa();   
 
             minions = new LlistaMinions();
+            minions.AddMinion(MAX_MAPA);
             
             var loop = GameLoop.Create(window.Graphics, OnUpdate);
             loop.Start();
@@ -33,9 +34,8 @@ class Program
         gfx.DrawImage(mapa.image, windowRectangle);
 
 
-        minions.AddMinion(MAX_MAPA);
         mapa.DrawMinions(in minions, gfx);
         qiyana.Draw(gfx);
-        qiyana.Move(windowRectangle);
+        qiyana.Move(windowRectangle, minions.list, MAX_MAPA);
     }
 }

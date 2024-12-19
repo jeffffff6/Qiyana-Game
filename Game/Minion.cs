@@ -7,7 +7,8 @@ public class Minion
 {
     private Image image;
     private Vector posicio;
-    private Circle hitbox;
+    public Circle hitbox{get;}
+    const int radius = 130/2;
     
     public Minion(int MAX_MAPA)
     {
@@ -17,11 +18,14 @@ public class Minion
         int offSet = 145;
         posicio.X = rnd.Next(0+22,MAX_MAPA-offSet);
         posicio.Y = rnd.Next(0+22,MAX_MAPA-offSet);
+        hitbox = new Circle(posicio,radius);
     }
     public void Draw(GraphicsContext gfx){
         gfx.DrawImage(image, posicio);
     }
-
+    public int Radius(){
+        return radius;
+    }
 
 }
 }

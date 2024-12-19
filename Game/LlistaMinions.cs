@@ -1,8 +1,11 @@
 using Heirloom;
+using Heirloom.Desktop;
+using Heirloom.Geometry;
 namespace Game;
 public class LlistaMinions
-{
-    public List<Minion> list;
+{   
+    const int INITIAL_MINIONS = 5;
+    public List<Minion> list{get;}
 
 
     public LlistaMinions(){
@@ -10,12 +13,23 @@ public class LlistaMinions
     }
     public void AddMinion(int MAX_MAPA)
     {
-        //if(true){
-        //}
-        Minion minion= new Minion(MAX_MAPA);
-        for (int i = 0; i < 8; i++){
-            list.Add(minion);
+        int i = 0;
+        while(i<INITIAL_MINIONS){
+            Minion minion = new Minion(MAX_MAPA);
+            if(OverlapHitbox(minion.hitbox)){
+                list.Add(minion);
+                i++;
+            }
         }
-
     }
+
+    public bool OverlapHitbox(Circle hitbox)
+    {
+        for (int i = 0; i < list.Count; i++)
+        {
+            if(list[i].hitbox.Overlaps(hitbox)) return false;
+        }
+        return true;
+    }
+
 }
